@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    max-width: 1000px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.myHeader {
+    background-color: rgb(25, 172, 25);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.navegation {
+    padding: 1rem 1.5rem;
+    background-color: #202020df;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navegation a {
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Hero Section */
+.myHero {
+    position: relative;
+    background-color: wheat;
+    padding: 3rem 1.5rem;
+    min-height: 500px;
+}
+
+.myHero h2 {
+    margin-bottom: 1rem;
+}
+
+.myHero p {
+    margin-bottom: 1rem;
+}
+
+.myHero button {
+    background-color: rgb(25, 172, 25);
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: green;
+    }
+}
+
+.myHero img {
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    background-color: rgb(35, 35, 35);
+    border-radius: 100%;
+    box-shadow: 6px 10px 20px 5px rgba(73, 73, 73, 0.797);
+}
+
+.mySection {
+    padding: 2rem;
+}
+
+.mySection h2 {
+    margin-bottom: 1rem;
+}
+
+.mySection__content {
+    background-color: #ebebeb;
+    border: 1px solid rgb(174, 174, 174);
+    padding: 1rem;
+}
+
+.mySection__content p {
+    margin-bottom: 1rem;
+}
+
+.mySection__content ul {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.myFooter {
+    background-color: #202020df;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
