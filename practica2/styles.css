@@ -1,0 +1,144 @@
+:root {
+    --font-body: "Roboto", sans-serif;
+    --primary-color: #002E5D;
+    --secondary-color: #6C757D;
+    --tertiary-color: #E9ECEF;
+    --neutral-color: #F8F9FA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+fieldset {
+    border-style: none;
+}
+
+body {
+    background-color: var(--tertiary-color);
+    font-family: var(--font-body);
+}
+
+.new_reg {
+    margin: 3rem 3rem 0;
+}
+
+.new_reg h1 {
+    margin-bottom: .2rem;
+}
+
+/* My formulario de Registro */
+.myForm {
+    max-width: 940px;
+    margin: auto;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media screen and (min-width: 970px) {
+    .myForm {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+.box_visit {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.box_button {
+    grid-column-start: 2;
+}
+
+/* Seccion de informacion */
+.box {
+    border-radius: 8px;
+    background-color: var(--neutral-color);
+    padding: 2rem 1.5rem 1rem;
+}
+
+.box legend {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.box label {
+    color: var(--secondary-color);
+    margin-bottom: .4rem;
+}
+
+.box input,
+.box select,
+.box textarea {
+    background-color: var(--tertiary-color);
+    font-size: 1.1rem;
+    padding: .5rem;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    width: 100%;
+    margin-bottom: 1rem;
+    outline: none;
+
+    &:focus {
+        border: 2px solid var(--secondary-color);
+    }
+}
+
+.box label,
+.box input {
+    display: block;
+}
+
+/* Seccion detalle de visita*/
+.box_visit p {
+    margin-bottom: .5rem;
+
+}
+.box_visit textarea {
+    resize: none;
+    height: 200px;
+}
+
+/* My Logistics field */
+.datetime {
+    display: flex;
+    gap: 1rem;
+}
+
+/* My form button */
+.box_end iframe {
+    width: 100%;
+    height: 200px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+}
+.box_end button {
+    margin-top: 1.5rem;
+    display: block;
+    color: var(--neutral-color);
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .3s;
+
+    &:hover {
+        background-color: #0062c4;
+    }
+}
+.box_end p {
+    font-size: .8rem;
+    margin: 1rem;
+    color: var(--secondary-color);
+    font-style: oblique;
+    text-align: center;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+    <title>Formulario de Registro</title>
+</head>
+<body>
+    <article class="new_reg">
+        <h1>New Visit Registration</h1>
+        <p>Documenting pastoral care nad fellowship visits across the Stake.</p>
+
+        <form class="myForm">
+            <section class="box_information box">
+                <fieldset>
+                    <legend>Member Information</legend>
+
+                    <label for="fullname">Full Name</label>
+                    <input type="text" placeholder="Enter member name">
+
+                    <label for="address">Address</label>
+                    <input type="text" placeholder="Street, City, Postal Code">
+                
+                    <label for="phone">Phone Number</label>
+                    <input type="number" placeholder="+51 999 999 999">
+                </fieldset>
+            </section>
+
+            <section class="box_visit box">
+                <fieldset>
+                    <legend>Visit Details</legend>
+                    <p>Comments & Observations</p>
+
+                    <textarea placeholder="Describe the visit context, needs Identified, or spiritual messages shared..."></textarea>
+                </fieldset>
+            </section>
+
+            <section class="box_logistc box">
+                <fieldset>
+                    <legend>Logistics</legend>
+
+                    <div class="datetime">
+                        <label for="date">Date
+                        <input type="date"></label>
+
+                        <label for="time">Time
+                        <input type="time"></label>
+                    </div>
+
+                    <label for="visit">Visit Status</label>
+                    <select name="visit" id="">
+                        <option value="1">Completed</option>
+                        <option value="0">No-Completed</option>
+                    </select>
+
+                    <label for="register">Register Name</label>
+                    <input type="text" value="Full name of registrar">
+                </fieldset>
+            </section>
+
+            <section class="box_end">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15606.61408319846!2d-76.93544210706803!3d-12.06734350501252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2spe!4v1777507482323!5m2!1sen!2spe"  
+                    allowfullscreen="true" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <button type="submit">Save record</button>
+                <p>* Information recorded is used for internal congregational support only.</p>
+            </section>
+        </form>
+    </article>
+</body>
+</html>
