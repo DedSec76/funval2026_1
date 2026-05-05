@@ -33,7 +33,7 @@
       <a class="text-sm uppercase border-1 p-1 pr-0.5 rounded-4xl" href="#">Contact <img class="inline w-12 bg-neonGreen rounded-3xl" src="/arrow.png" alt="una flecha que nos lleva a contactar"></a>
     </header>
     
-    <main>
+    <main class="">
       <section class="bg-linear-to-t from-deepBlue to-darker mt-20 
                       flex flex-col items-center">
 
@@ -52,9 +52,8 @@
         </div>
       </section>
 
-      <article class="relative pt-25 text-center mx-17 mb-20">
-        <h2 class="text-5xl text-highlight
-            font-bold uppercase my-7">Who Am I?
+      <article class="max-w-6xl m-auto relative pt-25 pb-25 text-center">
+        <h2 class="heading">Who Am I?
         </h2>
         <p class="mb-5">I Am a full-stack website developer specialized in React.JS. Put I also know some Wordpress front end development with WooCommerce.</p>
 
@@ -68,27 +67,81 @@
                     absolute rounded-xl 
                     top-13 left-5 
                     -rotate-30"
-              src="casualClothe.webp" alt="">
+              src="/casualClothe.webp" 
+              alt="Imagen con ropa casual desarrollador fullstack">
+
+        <img class="shadow-[10px_-15px_30px_var(--color-softGray)] w-18 
+                    absolute rounded-xl 
+                    bottom-8 left-5 
+                    rotate-20"
+             src="/standFront.webp" 
+             alt="Una imagen mia de pie cruzado de brazos">
+        
+        <img class="shadow-[-25px_-25px_40px_var(--color-softGray)] w-22 
+                    absolute rounded-xl 
+                    top-16 right-5 
+                    -rotate-12"
+             src="/sitTable.webp" 
+             alt="Una imagen mia sentado con los brazos sobre una mesa">
       </article>
 
-      <section>
-        <h2>My Skills</h2>
+      <section class="max-w-6xl m-auto">
+        <h2 class="heading text-center">My Skills</h2>
 
-        <div>
+        <section class="flex flex-col justify-center gap-2 md:flex-row">
+          <div class="grid grid-cols-4 gap-1">
+            <div class="cardSkill">
+              <img src="/imgTech/html.png" alt="">
+            </div>
+            <div class="cardSkill">
+              <img src="/imgTech/css-3.png" alt="">
+            </div>
+            <div class="cardSkill">
+              <img src="/imgTech/java-script.png" alt="">
+            </div>
+            <div class="cardSkill">
+              <img src="/imgTech/react.png" alt="">
+            </div>
+            <div class="cardSkill">
+              <img class="rounded-full w-16" src="/imgTech/next.png" alt="">
+            </div>
+            <div class="cardSkill">
+              <img src="/imgTech/nodejs.png" alt="">
+            </div>
+            <div class="cardSkill">
+              <img class="rounded-full" src="/imgTech/tailwindcss.png" alt="">
+            </div>
+            <div class="cardSkill">
+              <img src="/imgTech/mysql.png" alt="" />
+              <span>MySql</span>
+            </div>
+          </div>
 
-        </div>
-        <div>
-          <h3>2 <span>Years Experience Working</span></h3>
+          <div class="cardSkill flex-col text-center gap-4">
+            <h3 class="text-5xl font-bold">2 <span class="block text-2xl">Years <br>Experience <br>Working</span></h3>
 
-          <a download="">Download My cv</a>
-        </div>
+            <a class="w-2xs standard_button"
+               href="/assets/CV-AldairRutte-Web.pdf" 
+               download>Download My cv</a>
+          </div>
+        </section>
       </section>
 
-      <section>
-        <h2>Additional Skills</h2>
+      <section class="max-w-6xl m-auto my-25 bg-deepBlue rounded-lg py-5 px-15">
+        <h2 class="heading text-center text-3xl">Additional Skills</h2>
 
-        <div>
-          logos of additional skills
+        <div class="flex flex-wrap gap-3">
+          <img src="/imgTech/python.png" alt="">
+          <img src="/imgTech/c-sharp.png" alt="">
+          <img src="/imgTech/java.png" alt="">
+          <img src="/imgTech/php.png" alt="">
+          <img src="/imgTech/sass.png" alt="">
+          <img src="/imgTech/git.png" alt="">
+          <img src="/imgTech/github.png" alt="">
+          <img src="/imgTech/npm.png" alt="">
+          <img src="/imgTech/powerbi.png" alt="">
+          <img src="/imgTech/excel.png" alt="">
+          
         </div>
       </section>
 
@@ -100,19 +153,25 @@
         </div>
       </section>
     </main>
-    <footer>
-      <h2>Let's have a chat</h2>
 
-      <form>
-        <input type="text" placeholder="YOUR NAME">
+    <footer class="max-w-3xl mx-auto mt-25 p-15 rounded-xl bg-lighten text-deepBlue">
+      <h2 class="text-5xl font-bold text-center uppercase mb-15">Let's have a chat</h2>
 
-        <input type="email" placeholder="EMAIL ADDRESS (@)">
+      <form class="flex flex-col gap-4">
+        <input class="formField" type="text" placeholder="YOUR NAME">
 
-        <textarea placeholder="PUT YOUR MESSAGE HERE"></textarea>
+        <input class="formField" type="email" placeholder="EMAIL ADDRESS (@)">
 
-        <button type="submit">SUBMIT HERE</button>
+        <textarea class="formField resize-none h-20" placeholder="PUT YOUR MESSAGE HERE"></textarea>
+
+        <button class="standard_button" type="submit">SUBMIT HERE</button>
       </form>
+
+      
     </footer>
+  
+    <p class="border-t border-t-gray-600 mt-10 pt-3 text-center">&copy; Creado por Aldair Rutte - <span id="year"></span></p>
+    <p class="mt-1 mb-5 text-center" id="lastModified"></p>
 
     <script type="module" src="/src/script.js"></script>
   </body>
