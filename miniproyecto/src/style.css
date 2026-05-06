@@ -37,13 +37,22 @@
   }
 
   .heading {
-    @apply text-5xl text-highlight font-bold uppercase my-7
+    @apply text-center text-3xl md:text-5xl text-highlight font-bold uppercase my-7
   }
   .cardSkill {
-    @apply bg-deepBlue py-15 px-2 rounded-lg flex justify-center
+    @apply bg-deepBlue py-7 md:py-15 px-2 md:px-4 rounded-lg flex justify-center
   }
   .formField {
     @apply bg-[#E3E3E3] rounded-xl px-6 py-4 uppercase text-xs md:text-base
+  }
+  .btnSocial {
+    @apply bg-[#333333] py-3 cursor-pointer rounded-lg hover:bg-[#c4f82a] hover:text-black
+  }
+  .project_img {
+    @apply brightness-90 cursor-pointer object-cover rounded-2xl relative w-20 h-72 transition-all delay-150 duration-700 ease-in-out hover:w-xl
+  }
+  .figcaption {
+    @apply transition-all bg-deepBlue p-2 rounded-sm text-lighten absolute left-1/4 bottom-1 truncate
   }
 }
 

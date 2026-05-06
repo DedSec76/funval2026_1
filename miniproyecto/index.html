@@ -34,15 +34,17 @@
     </header>
     
     <main>
-      <section class="bg-linear-to-t from-deepBlue to-darker mt-20 
+      <!---  HERO  -->
+      <section class="overflow-hidden bg-linear-to-t from-deepBlue to-darker mt-20 
                       flex flex-col items-center">
 
-        <h1 class="text-6xl text-center">I'm <span class="text-highlight italic">Aldair Rutte</span><br>
+        <h1 class="text-4xl md:text-6xl text-center">I'm <span class="text-highlight italic">Aldair Rutte</span><br>
           Full Stack Developer
         </h1>
 
-        <div class="w-xs drop-shadow-[0_-45px_70px_var(--color-highlight)]
-                    relative">
+        <div class="w-2xs md:w-lg 
+                    drop-shadow-[0_0_70px_var(--color-highlight)]
+                    ">
           <img 
               src="/myProfile.webp" 
               alt="Mi imagen de perfil sin fondo"/>
@@ -52,7 +54,11 @@
         </div>
       </section>
 
-      <article class="max-w-6xl mx-15 md:mx-auto relative pt-25 pb-25 text-center">
+      <!---  WHO AM I  -->
+      <article class="max-w-4xl 
+                      mx-15 md:mx-auto pt-25 pb-25 
+                      relative text-center">
+
         <h2 class="heading">Who Am I?
         </h2>
         <p class="mb-5">I Am a full-stack website developer specialized in React.JS. Put I also know some Wordpress front end development with WooCommerce.</p>
@@ -63,64 +69,67 @@
 
         <a class="standard_button" href="#">Show My Projects</a>
 
-        <img class="shadow-[-40px_-18px_50px_var(--color-softGray)] w-18 
-                    absolute rounded-xl 
-                    top-13 left-5 
+        <img class="shadow-[-40px_-18px_50px_var(--color-softGray)] 
+                    w-16 md:w-18 rounded-xl
+                    absolute 
+                    top-10 left-3 md:left-1/12
                     -rotate-30"
               src="/casualClothe.webp" 
               alt="Imagen con ropa casual desarrollador fullstack">
 
-        <img class="shadow-[10px_-15px_30px_var(--color-softGray)] w-18 
-                    absolute rounded-xl 
-                    bottom-8 left-5 
-                    rotate-20"
+        <img class="shadow-[10px_-15px_40px_var(--color-softGray)] 
+                    w-14 md:w-18 rounded-xl
+                    absolute 
+                    right-1 bottom-1/12 md:bottom-8 md:left-5 
+                    rotate-25"
              src="/standFront.webp" 
              alt="Una imagen mia de pie cruzado de brazos">
         
-        <img class="shadow-[-25px_-25px_40px_var(--color-softGray)] w-22 
-                    absolute rounded-xl 
-                    top-16 right-5 
+        <img class="shadow-[-25px_-25px_40px_var(--color-softGray)] 
+                    w-16 md:w-22 rounded-xl
+                    absolute 
+                    top-1/12 -right-1/12 
                     -rotate-12"
              src="/sitTable.webp" 
              alt="Una imagen mia sentado con los brazos sobre una mesa">
       </article>
 
+      <!---  MY SKILLS  -->
       <section class="max-w-6xl mx-15 md:mx-auto">
         <h2 class="heading text-center">My Skills</h2>
 
         <section class="flex flex-col justify-center gap-2 md:flex-row">
           <div class="grid grid-cols-4 gap-1">
             <div class="cardSkill">
-              <img src="/imgTech/html.png" alt="">
+              <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/html.png" alt="">
             </div>
             <div class="cardSkill">
-              <img src="/imgTech/css-3.png" alt="">
+              <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/css-3.png" alt="">
             </div>
             <div class="cardSkill">
-              <img src="/imgTech/java-script.png" alt="">
+              <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/java-script.png" alt="">
             </div>
             <div class="cardSkill">
-              <img src="/imgTech/react.png" alt="">
+              <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/react.png" alt="">
             </div>
             <div class="cardSkill">
-              <img class="rounded-full w-16" src="/imgTech/next.png" alt="">
+              <img class="w-12 h-12 md:w-16 md:h-16 rounded-full md:w-16" src="/imgTech/next.png" alt="">
             </div>
             <div class="cardSkill">
-              <img src="/imgTech/nodejs.png" alt="">
+              <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/nodejs.png" alt="">
             </div>
             <div class="cardSkill">
-              <img class="rounded-full" src="/imgTech/tailwindcss.png" alt="">
+              <img class="w-12 h-12 md:w-16 md:h-16 rounded-full" src="/imgTech/tailwindcss.png" alt="">
             </div>
             <div class="cardSkill">
-              <img src="/imgTech/mysql.png" alt="" />
-              <span>MySql</span>
+              <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/mysql.png" alt="" />
             </div>
           </div>
 
-          <div class="cardSkill flex-col text-center gap-4">
+          <div class="cardSkill px-6 flex-col text-center gap-4">
             <h3 class="text-5xl font-bold">2 <span class="block text-2xl">Years <br>Experience <br>Working</span></h3>
 
-            <a class="w-2xs m-auto standard_button"
+            <a class="w-3xs m-auto standard_button"
                href="./public/assets/CV-AldairRutte-Web.pdf" 
                download
             >Download My cv</a>
@@ -128,33 +137,58 @@
         </section>
       </section>
 
+      <!---  ADDITIONAL SKILLS  -->
       <section class="max-w-4xl mx-15 my-25 md:mx-auto px-10 py-5 bg-deepBlue rounded-lg">
-        <h2 class="heading text-center text-3xl">Additional Skills</h2>
+        <h2 class="heading">Additional Skills</h2>
 
         <div class="flex flex-wrap gap-3 md:justify-around">
-          <img src="/imgTech/python.png" alt="">
-          <img src="/imgTech/c-sharp.png" alt="">
-          <img src="/imgTech/java.png" alt="">
-          <img src="/imgTech/php.png" alt="">
-          <img src="/imgTech/sass.png" alt="">
-          <img src="/imgTech/git.png" alt="">
-          <img src="/imgTech/github.png" alt="">
-          <img src="/imgTech/npm.png" alt="">
-          <img src="/imgTech/powerbi.png" alt="">
-          <img src="/imgTech/excel.png" alt="">
+          <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/python.png" alt="">
+          <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/c-sharp.png" alt="">
+          <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/java.png" alt="">
+          <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/php.png" alt="">
+          <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/sass.png" alt="">
+          <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/git.png" alt="">
+          <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/github.png" alt="">
+          <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/npm.png" alt="">
+          <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/powerbi.png" alt="">
+          <img class="w-12 h-12 md:w-16 md:h-16" src="/imgTech/excel.png" alt="">
         </div>
       </section>
 
+      <!---  RAIL JOBS -->
       <section class="max-w-4xl mx-15
-        lg:mx-auto">
-        <span>The works clossest to my heart</span>
+                      flex flex-col md:flex-row
+                      md:mb-15
+                      relative">
+      
+        <h2 class="heading text-lighten md:max-w-sm">The works clossest to my heart</h2>
 
-        <div>
-          some images of jobs
+        <div class="text-center mt-2 mb-6 flex flex-1 gap-4 justify-center items-center">
+          <figure class="relative overflow-hidden">
+            <img class="cursor-auto project_img w-2xs" src="/imgProjects/desserts.webp" alt="Una imagen de mi proyecto fullstack hecho en php un dashboard"/>
+             <figcaption class="figcaption">Tienda de Postres</figcaption>
+          </figure>
+          <figure class="relative overflow-hidden">
+            <img class="project_img" src="/imgProjects/dashboardDev.webp" alt="Una imagen de mi proyecto fullstack hecho en php un dashboard">
+            <figcaption class="figcaption">Admin Dashboard</figcaption>
+          </figure>
+          <figure class="relative overflow-hidden">
+            <img class="project_img" src="/imgProjects/comparePrice.webp" alt="Una imagen de mi proyecto fullstack hecho en php un dashboard">
+            <figcaption class="figcaption">Comparador de Precio</figcaption>
+          </figure>
+          <figure class="relative overflow-hidden">
+            <img class="project_img" src="/imgProjects/store.webp" alt="Una imagen de mi proyecto fullstack hecho en php un dashboard">
+            <figcaption class="figcaption">Tienda de playeras</figcaption>
+          </figure>
+          
         </div>
+
+        <a class="standard_button text-center 
+                  md:absolute md:top-2/3 md:left-1/4" href="#">Show My Projects</a>
       </section>
     </main>
 
+    <!---  FORM CONTACT  -->
     <footer class="max-w-3xl mx-15 md:m-auto mt-25 p-7 md:p-15 rounded-xl bg-lighten text-deepBlue">
       <h2 class="text-3xl md:text-5xl font-bold text-center uppercase mb-15">Let's have a chat</h2>
 
