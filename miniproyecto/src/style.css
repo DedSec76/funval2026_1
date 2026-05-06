@@ -33,7 +33,7 @@
   }
 
   .standard_button {
-    @apply bg-highlight text-darker uppercase px-6 py-3 rounded-3xl hover:bg-neonGreen cursor-pointer
+    @apply bg-highlight text-darker uppercase px-6 py-3 rounded-3xl text-base md:text-lg hover:bg-neonGreen cursor-pointer
   }
 
   .heading {
@@ -43,7 +43,7 @@
     @apply bg-deepBlue py-15 px-2 rounded-lg flex justify-center
   }
   .formField {
-    @apply bg-[#E3E3E3] rounded-xl px-6 py-4 uppercase
+    @apply bg-[#E3E3E3] rounded-xl px-6 py-4 uppercase text-xs md:text-base
   }
 }
 
