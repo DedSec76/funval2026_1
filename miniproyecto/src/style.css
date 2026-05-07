@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-
 @import "tailwindcss";
 
 :root {
@@ -49,10 +48,13 @@
     @apply bg-[#333333] py-3 cursor-pointer rounded-lg hover:bg-[#c4f82a] hover:text-black
   }
   .project_img {
-    @apply brightness-90 cursor-pointer object-cover rounded-2xl relative w-20 h-72 transition-all delay-150 duration-700 ease-in-out hover:w-xl
+    @apply brightness-90 cursor-pointer object-cover rounded-2xl relative w-20 h-72 transition-all delay-150 duration-700 ease-in-out hover:w-xl active:w-xl
   }
   .figcaption {
     @apply transition-all bg-deepBlue p-2 rounded-sm text-lighten absolute left-1/4 bottom-1 truncate
+  }
+  .circle {
+    @apply absolute -top-1 w-3 h-3 bg-[#3c3cc5] rounded-2xl
   }
 }
 
