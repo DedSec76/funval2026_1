@@ -25,6 +25,6 @@ function lightMode() {
         body.classList.toggle('lightmode');
         
         dataset = dataset === 'off' ? 'on' : 'off'
-        img.src = dataset === 'on' ? '/dist/focoOn.png' : '/dist/focoOff.png';
+        img.src = dataset === 'on' ? '/focoOn.png' : '/focoOff.png';
     })
 }
