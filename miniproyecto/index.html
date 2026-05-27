@@ -9,7 +9,10 @@
     <title>miniproyecto</title>
   </head>
   <body>
-    <header class="flex flex-row justify-between items-center relative py-6 px-6 bg-darker">
+    <!-- HEADER -->
+    <button id="btnLightMode" class="z-5000 fixed top-1/6 right-6 lg:right-44
+                   w-14 cursor-pointer"><img data-light="off" class="drop-shadow-[0_2px_8px_var(--color-neonGreen)]" src="./dist/focoOff.png" alt="Imagen de foco para el boton modo claro y oscuro"></button>
+    <header class="flex flex-row justify-between lg:justify-around items-center relative py-6 px-6 bg-darker">
       <figure class="mt-4">
         <img class="w-20 rounded-full" src="/dedsecDev.webp" alt="Logo de mi marca como freelance">
         <figcaption class="text-sm uppercase">Dedsec Dev</figcaption>
@@ -34,6 +37,7 @@
       <a class="text-sm uppercase border p-1 pr-0.5 rounded-4xl" href="#contact">Contact <img class="inline w-12 bg-neonGreen rounded-3xl" src="/arrow.png" alt="una flecha que nos lleva a contactar"></a>
     </header>
     
+    <!-- MAIN -->
     <main>
       <!---  HERO  -->
       <section class="relative overflow-hidden bg-linear-to-t from-deepBlue to-darker mt-20 
@@ -163,7 +167,7 @@
           <div class="cardSkill px-6 flex-col text-center gap-4">
             <h3 class="text-5xl font-bold">2 <span class="block text-2xl">Years <br>Experience <br>Working</span></h3>
 
-            <a class="w-3xs m-auto standard_button"
+            <a class="py-4 md:w-3xs m-auto standard_button"
                href="/assets/CV-AldairRutteWeb.pdf" 
                download
             >Download My cv</a>
@@ -221,7 +225,6 @@
         <a class="standard_button text-center 
                   md:absolute md:top-2/3 md:left-1/4" href="#">Show My Projects</a>
       </section>
-
     </main>
 
     <!---  FORM CONTACT  -->

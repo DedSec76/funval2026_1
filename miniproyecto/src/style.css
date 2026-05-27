@@ -3,23 +3,31 @@
 @import "tailwindcss";
 
 :root {
-  --color-dark-bg: #0D1117;
-  --color-main-text: #FFF;
-  --color-high-yellow: #E3FF6A;
-  --color-neon-green: #A4FF7A;
-  --color-dark-blue: #1E293B;
+  --color-darker: #0D1117;
+  --color-lighten: #FFF;
+  --color-highlight: #E3FF6A;
+  --color-neonGreen: #A4FF7A;
+  --color-deepBlue: #1E293B;
   --color-soft-grey: #8892B0;
 
   --linear-gradient: linear-gradient(135deg, #1E293B 0%, #0D1117 100%);
 }
 
+.lightmode {
+  --color-darker: #F5F7FA;
+  --color-lighten: #111827;
+  --color-highlight: #B6D600;
+  --color-neonGreen: #4CAF50;
+  --color-deepBlue: #DCE6F2;
+}
+
 @theme {
-  --color-darker: #0D1117;
-  --color-lighten: #FFFFFF;
-  --color-highlight: #E3FF6A;
-  --color-neonGreen: #A4FF7A;
-  --color-deepBlue: #1E293B;
-  --color-softGray: #8892B0;
+  --color-darker: var(--color-darker);
+  --color-lighten: var(--color-lighten);
+  --color-highlight: var(--color-highlight);
+  --color-neonGreen: var(--color-neonGreen);
+  --color-deepBlue: var(--color-deepBlue);
+  --color-soft-grey: var(--color-soft-grey);
 
   --font-sans: "Roboto", sans-serif;
 
@@ -30,11 +38,9 @@
   .open {
     @apply transition-transform rotate-45 duration-300 ease-in-out;
   }
-
   .standard_button {
     @apply bg-highlight text-darker uppercase px-6 py-3 rounded-3xl text-base md:text-lg hover:bg-neonGreen cursor-pointer
   }
-
   .heading {
     @apply text-center text-3xl md:text-5xl text-highlight font-bold uppercase my-7
   }
@@ -42,7 +48,7 @@
     @apply bg-deepBlue py-7 md:py-15 px-2 md:px-4 rounded-lg flex justify-center
   }
   .formField {
-    @apply bg-[#E3E3E3] rounded-xl px-6 py-4 uppercase text-xs md:text-base
+    @apply bg-deepBlue text-lighten rounded-xl px-6 py-4 uppercase text-xs md:text-base
   }
   .btnSocial {
     @apply bg-[#333333] py-3 cursor-pointer rounded-lg hover:bg-[#c4f82a] hover:text-black
@@ -58,8 +64,9 @@
   }
 }
 
+
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-dark-bg);
-  color: var(--color-main-text);
+  background-color: var(--color-darker);
+  color: var(--color-lighten);
 }

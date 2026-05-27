@@ -79,7 +79,7 @@ Crea una función clasificarParesImpares que reciba dos números inicio y fin y:
     - Pide al usuario inicio y fin mediante prompt.
     - Muestra el resultado en consola.*/
 
-/* function clasificarParesImpares(inicio, fin) {
+function clasificarParesImpares(inicio, fin) {
     for(let i = inicio; i <= fin; i++) {
         if (i === 0) {
             console.log(`${i} es 0`)
@@ -94,7 +94,7 @@ Crea una función clasificarParesImpares que reciba dos números inicio y fin y:
 let inicio = Number(prompt("Ingrese un número de Inicio: ")) 
 let fin = Number(prompt("Ingrese un número de fin: ")) 
 
-clasificarParesImpares(inicio, fin) */
+clasificarParesImpares(inicio, fin)
 
 /*
 Ejercicio 5 – Número mayor y suma.
@@ -118,7 +118,7 @@ function mayorYSuma() {
         }
         suma += numero
     }
-    
+
     console.log(`El número mayor es: ${mayor}`)
     console.log(`La suma de los números es: ${suma}`)
 }
