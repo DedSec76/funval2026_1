@@ -1,3 +1,5 @@
+import { dataload } from "./portfolio"
+
 const nav = document.querySelector("#menu")
 const btnHamburger = document.querySelector("#btnMenu")
 const lastModified = document.getElementById("lastModified")
@@ -5,7 +7,9 @@ const year = document.getElementById("year")
 const body = document.querySelector('body')
 
 const date = new Date()
+
 lightMode()
+dataload()
 
 btnHamburger.addEventListener("click", () => {
     nav.dataset.open = nav.dataset.open === "true" ? "false" : "true";
@@ -28,3 +32,4 @@ function lightMode() {
         img.src = dataset === 'on' ? '/focoOn.png' : '/focoOff.png';
     })
 }
+

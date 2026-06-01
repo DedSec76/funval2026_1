@@ -54,7 +54,7 @@
     @apply bg-[#333333] py-3 cursor-pointer rounded-lg hover:bg-[#c4f82a] hover:text-black
   }
   .project_img {
-    @apply brightness-90 cursor-pointer object-cover rounded-2xl relative w-20 h-72 transition-all delay-150 duration-700 ease-in-out hover:w-xl active:w-xl
+    @apply brightness-90 cursor-pointer object-cover rounded-2xl relative w-20 h-72 transition-all delay-150 duration-700 ease-in-out hover:w-xl
   }
   .figcaption {
     @apply transition-all bg-deepBlue p-2 rounded-sm text-lighten absolute left-1/4 bottom-1 truncate
