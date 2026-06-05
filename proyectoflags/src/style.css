@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-darker: #0D1117;
+  --color-lighten: #FFF;
+  --color-highlight: #E3FF6A;
+  --color-neonGreen: #A4FF7A;
+  --color-deepBlue: #1E293B;
+  --color-soft-grey: #8892B0;
+}
+
+.lightmode {
+  --color-darker: #F5F7FA;
+  --color-lighten: #111827;
+  --color-highlight: #B6D600;
+  --color-neonGreen: #4CAF50;
+  --color-deepBlue: #DCE6F2;
+}
+
+@theme {
+  --color-darker: var(--color-darker);
+  --color-lighten: var(--color-lighten);
+  --color-highlight: var(--color-highlight);
+  --color-neonGreen: var(--color-neonGreen);
+  --color-deepBlue: var(--color-deepBlue);
+  --color-soft-grey: var(--color-soft-grey);
+
+  --font-sans: "Roboto", sans-serif;
+}
+
+@layer components {
+}
+
+
+body {
+  font-family: var(--font-sans);
+}
