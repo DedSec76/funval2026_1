@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+    --bg-color: #f7f7f7;
+}
+
+@layer components {
+    .divSearch {
+        @apply flex-1 md:flex-auto md:px-6 flex items-center justify-center text-gray-400 text-sm md:text-base
+    }
+    
+}
+
+body {
+    background-color: var(--bg-color);
+}
