@@ -3,6 +3,13 @@ import { stays } from "./stays.js"
 
 const mainContainer = document.querySelector("#contenedor")
 
+const filtros = {
+    city: "",
+    guests: 0
+}
+
+// Funcion para obtener lugares según
+// busqueda del usuario
 export function filtrarLugares() {
     const location = document.querySelector("#inputLocation")
     const listStays = document.querySelector("#staysList")
@@ -16,9 +23,14 @@ export function filtrarLugares() {
         let value = location.value.toLowerCase().trim()
 
         if(value.length === 0) return
+        filtros.city = value
 
-        const filtrados = stays.filter(s => s.city.toLowerCase().includes(value))
-        
+        mainContainer.innerHTML = ""
+
+        const filtrados = stays.filter(s => s.city.toLowerCase().includes(filtros.city))
+
+        renderizarLista(mainContainer, filtrados)
+
         if(filtrados.length === 0) {
             html = "<p>No Stays found</p>"
         
@@ -48,19 +60,46 @@ export function filtrarLugares() {
             listStays.classList.add("hidden")
             location.value = city.textContent
 
-            const filtrados = stays.filter(s => s.city.toLowerCase() === item)
-            renderizarLista(mainContainer, filtrados)
+            filtros.city = item
 
-            const spanStays = document.querySelector("#totalStays")
-            if(!spanStays) return
-
-            const cantidad = filtrados.length
-            spanStays.textContent = `${cantidad} ${cantidad > 1 ? "stays" : "stay"}`
+            aplicarFiltros()
         })
     }
 }
 
-export function filtrarHuespedes(modalGuest, huesped) {
+// Objeto de huespedes
+const huesped = {
+    adults: {
+        count: 0,
+        span: null,
+    },
+    children: {
+        count: 0,
+        span: null,
+    }
+}
+
+// Funcion para obtener la cantidad de huespedes
+// que añade el usuario
+export function filtrarHuespedes() {
+    const containerGuest = document.querySelector("#containerGuest")
+    const modalGuest = containerGuest.querySelector("#guest-popover")
+
+    // Abrir el Popover para añadir huespedes
+    containerGuest.addEventListener("click", (e) => {
+        if(e.target.closest("#btnGuests")) { 
+            modalGuest.classList.toggle("hidden")
+        }
+    })
+
+    // Inicializamos las referencias a los spans y valores
+    huesped.adults.span = modalGuest.querySelector("#adultSpan")
+    huesped.children.span = modalGuest.querySelector("#childSpan")
+    
+    // convertimos texto del span a numeros
+    huesped.adults.count = Number(huesped.adults.span.textContent) || 0
+    huesped.children.count = Number(huesped.children.span.textContent) || 0
+
     modalGuest.addEventListener("click", (e) => {
         mainContainer.innerHTML = ""
 
@@ -82,6 +121,8 @@ export function filtrarHuespedes(modalGuest, huesped) {
         // Calcula y muestra el total de huespedes
         let total = huesped.adults.count + huesped.children.count;
         const totalSpan = document.querySelector("#totalGuests")
+        if(!totalSpan) return
+        
         totalSpan.textContent = `${total} ${total <= 1 ? "Guest" : "Guests"}`
         
         // Activa y desactiva boton al llegar al maximo
@@ -91,16 +132,41 @@ export function filtrarHuespedes(modalGuest, huesped) {
         guest.span.textContent = guest.count
 
         // Filtra la busqueda por numero de huespedes
-        const filtrados = stays.filter(s => s.maxGuests >= total)
-        renderizarLista(mainContainer, filtrados)
+        filtros.guests = total
+
+        aplicarFiltros()
     })
+}
+
+export function aplicarFiltros() {
+    let resultados = stays
+
+    if(filtros.city !== "") { 
+        resultados = resultados.filter(s => s.city.toLowerCase() === filtros.city)
+    }
+
+    if(filtros.guests !== 0) { 
+        resultados = resultados.filter(s => s.maxGuests >= filtros.guests)
+    }
+
+    if(resultados.length === 0) { 
+        mainContainer.innerHTML = `<h3 class="mt-6 font-bold text-2xl text-center">Not Found Stays</h3>`    
+    }
+
+    renderizarLista(mainContainer, resultados)
+
+    // Total de stays
+    const spanStays = document.querySelector("#totalStays")
+    if(!spanStays) return
+
+    const cantidad = resultados.length
+    spanStays.textContent = `${cantidad} ${cantidad > 1 ? "stays" : "stay"}`
+        
 }
 
 function actualizarBotones(total) {
     let max = 10;
     const btns = document.querySelectorAll(`[data-action='increment']`)
-    
-    if(!btns) return
 
     btns.forEach(b => {
         if(total >= max) {
