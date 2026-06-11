@@ -4,6 +4,7 @@ import { stays } from "./stays.js"
 const mainContainer = document.querySelector("#contenedor")
 
 const filtros = {
+    parcialCity: "",
     city: "",
     guests: 0
 }
@@ -22,24 +23,26 @@ export function filtrarLugares() {
 
         let value = location.value.toLowerCase().trim()
 
-        if(value.length === 0) return
-        filtros.city = value
+        if(value.length === 0) {
+            filtros.city = ""
+        }
+
+        filtros.parcialCity = value
 
         mainContainer.innerHTML = ""
 
-        const filtrados = stays.filter(s => s.city.toLowerCase().includes(filtros.city))
+        aplicarFiltros()
 
-        renderizarLista(mainContainer, filtrados)
+        // Aplicar lista de sugerencias
+        const filtrados = stays.filter(s => s.city.toLowerCase().includes(value))
 
         if(filtrados.length === 0) {
-            html = "<p>No Stays found</p>"
-        
+            html = "<li class='w-full py-2 pl-4 text-red-700'>No Stays found</li>"
         } else {
             filtrados.forEach(f => {
-                html += `<li data-city="${f.city}" class="text-gray-500">📍${f.city}, ${f.country}</li>`
+                html += `<li data-city="${f.city}" class="text-gray-500 py-2 hover:bg-gray-200 hover:cursor-pointer">📍${f.city}, ${f.country}</li>`
             })
         }
-
         listStays.innerHTML = html
     })
 
@@ -57,12 +60,23 @@ export function filtrarLugares() {
 
             const item = city.dataset.city.toLowerCase()
             
-            listStays.classList.add("hidden")
-            location.value = city.textContent
+            location.value = item
 
             filtros.city = item
+            filtros.parcialCity = item
+
+            listStays.classList.add("hidden")
 
             aplicarFiltros()
+        })
+
+        /* Oculta la lista de sugerencias 
+           en caso el usuario de click en cualquier parte
+           que no sea la lista */
+        document.addEventListener("click", (e) => {
+            if(!e.target.closest("#inputLocation") && !e.target.closest("#staysList")) {
+                listStays.classList.add("hidden")
+            }
         })
     }
 }
@@ -138,10 +152,18 @@ export function filtrarHuespedes() {
     })
 }
 
+/* Funcion que aplica los filtros
+   1º Escribe el usuario en tiempo real
+   2º El usuario da click en la sugerencia de hospedaje
+   3º filtra segun cantidad de huespedes*/
 export function aplicarFiltros() {
     let resultados = stays
 
-    if(filtros.city !== "") { 
+    if(filtros.parcialCity.trim() !== "") {
+        resultados = resultados.filter(s => s.city.toLowerCase().includes(filtros.parcialCity))
+    }
+
+    if(filtros.city.trim() !== "") { 
         resultados = resultados.filter(s => s.city.toLowerCase() === filtros.city)
     }
 
@@ -164,6 +186,8 @@ export function aplicarFiltros() {
         
 }
 
+// Funcion que desactiva los botones de aumento
+// Si ya supero el maximo de huespedes
 function actualizarBotones(total) {
     let max = 10;
     const btns = document.querySelectorAll(`[data-action='increment']`)
