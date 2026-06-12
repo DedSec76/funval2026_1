@@ -5,10 +5,9 @@
 }
 
 @layer components {
-    .divSearch {
+    .styleSearch {
         @apply flex-1 md:flex-auto md:px-6 flex items-center justify-center text-gray-400 text-sm md:text-base cursor-pointer hover:bg-gray-200 hover:text-gray-500 transition
     }
-    
 }
 
 body {
