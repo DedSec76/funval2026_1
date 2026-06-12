@@ -47,6 +47,10 @@ export function filtrarLugares() {
         // el usuario
         listStays.classList.remove("hidden")
 
+        // Limpiamos el filtro de sugerencias cada vez que el usuario
+        // escribe algo, asi mantenemos las sugerencias sin redudancia
+        html = ""
+
         // Creamos una variable para el valor en tiempo real
         // que escribe el usuario
         let value = location.value.toLowerCase().trim()
