@@ -11,7 +11,7 @@
 <body>
     <!-- Dialog -->
     <dialog id="searchModal" 
-            class="fixed w-full max-w-none h-[80%] pt-8 px-6  bg-white">
+            class="fixed w-full max-w-none h-[60%] lg:h-[40%] pt-8 px-6  bg-white">
         
         <form method="dialog">
             <!-- Dialog Header -->
@@ -29,15 +29,15 @@
                 <!-- Location --> 
                 <div class="relative py-4 px-6 flex flex-col gap-1 border-b border-b-[#dedede] 
                             lg:border-b-0 lg:border-r lg:border-r-[#dedede]
-                            ">
+                            hover:bg-gray-100 hover:text-gray-600 transition">
                     <span class="text-xs uppercase font-semibold">Location</span>
                     <input id="inputLocation" class="text-gray-400 outline-0 focus:border-b border-red-400 pt-3 lg:py-0" type="text" placeholder="Add location">
                     <ul id="staysList" class="absolute top-11/12 left-4 z-9000 bg-white w-full flex flex-col gap-2"></ul>
                 </div>
                 
                 <!-- Guests --> 
-                <div id="containerGuest" class="relative">
-                    <button id="btnGuests" type="button" class="w-full py-4 px-6 text-start flex flex-col gap-1">
+                <div id="containerGuest" class="relative hover:bg-gray-100 hover:text-gray-600 transition">
+                    <button id="btnGuests" type="button" class="w-full py-4 px-6 text-start flex flex-col gap-1 cursor-pointer">
                         <span class="text-xs uppercase font-semibold">Guests</span>
                         <span id="totalGuests" class="text-gray-400 py-3 lg:py-0">Add guests</span>
                     </button>
@@ -70,6 +70,8 @@
                 </div>
                 <!-- Fin de Guests -->
 
+                <!-- Boton Search | 
+                     abre y cierra el modal -->
                 <button class="absolute left-1/2 -translate-x-1/2 bottom-6 bg-[#EB5757] text-white text-lg 
                             px-8 py-2 flex items-center gap-3 rounded-2xl hover:bg-[#c74949] cursor-pointer
                             lg:static lg:translate-0
@@ -104,19 +106,19 @@
 
         <!-- Search -->
         <div id="divSearch" class="flex h-14 md:h-18 bg-white rounded-2xl shadow-md overflow-hidden">
-            <div class="divSearch">
+            <div id="addLocation" class="styleSearch">
                 Add location
             </div>
 
             <div class="w-px bg-gray-200"></div>
 
-            <div class="divSearch">
+            <div id="addGuests" class="styleSearch">
                 Add guests
             </div>
 
             <div class="w-px bg-gray-200"></div>
 
-            <button class="w-14 flex items-center justify-center cursor-pointer">
+            <button class="w-14 flex items-center justify-center cursor-pointer hover:bg-gray-200">
                 <svg
                     class="w-4 h-4 stroke-[#EB5757]"
                     fill="none"

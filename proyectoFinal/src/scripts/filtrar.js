@@ -22,10 +22,12 @@ export function filtrarLugares() {
         html = ""
 
         let value = location.value.toLowerCase().trim()
-
+        
         if(value.length === 0) {
             filtros.city = ""
         }
+
+        document.querySelector("#addLocation").textContent = value || "Add location"
 
         filtros.parcialCity = value
 
@@ -34,8 +36,11 @@ export function filtrarLugares() {
         aplicarFiltros()
 
         // Aplicar lista de sugerencias
-        const filtrados = stays.filter(s => s.city.toLowerCase().includes(value))
+        let filtrados = stays.filter(s => s.city.toLowerCase().includes(value))
+        filtrados = filtrados.filter((valor, index, array) => array.findIndex(v => v.city === valor.city) === index )
 
+        // otra forma de no duplicar valores filtrados
+        //const noduplicar = [...new Map(stays.map(item => [item.city, item])).values()]
         if(filtrados.length === 0) {
             html = "<li class='w-full py-2 pl-4 text-red-700'>No Stays found</li>"
         } else {
@@ -64,6 +69,8 @@ export function filtrarLugares() {
 
             filtros.city = item
             filtros.parcialCity = item
+
+            document.querySelector("#addLocation").textContent = location.value
 
             listStays.classList.add("hidden")
 
@@ -105,6 +112,13 @@ export function filtrarHuespedes() {
             modalGuest.classList.toggle("hidden")
         }
     })
+    // Cerrar el popover cuando le damos click en cualquier parte
+    // que no sea el popover
+    document.addEventListener("click", (e) => {
+        if(!e.target.closest("#containerGuest")) { 
+            modalGuest.classList.add("hidden")
+        }
+    })
 
     // Inicializamos las referencias a los spans y valores
     huesped.adults.span = modalGuest.querySelector("#adultSpan")
@@ -115,13 +129,16 @@ export function filtrarHuespedes() {
     huesped.children.count = Number(huesped.children.span.textContent) || 0
 
     modalGuest.addEventListener("click", (e) => {
+        const button = e.target.closest("button");
+        if(!button) return
+
         mainContainer.innerHTML = ""
 
-        let dataType = e.target.dataset.type
-        let dataAction = e.target.dataset.action
+        let dataType = button.dataset.type
+        let dataAction = button.dataset.action
 
         if(!dataType || !dataAction) return
-            
+        
         const guest = huesped[dataType];
         if(!guest) return
 
@@ -138,9 +155,10 @@ export function filtrarHuespedes() {
         if(!totalSpan) return
         
         totalSpan.textContent = `${total} ${total <= 1 ? "Guest" : "Guests"}`
+        document.querySelector("#addGuests").textContent = totalSpan.textContent
         
         // Activa y desactiva boton al llegar al maximo
-        actualizarBotones(total);
+        actualizarBotones(huesped);
 
         // Pintar en HTML
         guest.span.textContent = guest.count
@@ -188,10 +206,11 @@ export function aplicarFiltros() {
 
 // Funcion que desactiva los botones de aumento
 // Si ya supero el maximo de huespedes
-function actualizarBotones(total) {
+function actualizarBotones(huesped) {
+    let total = huesped.adults.count + huesped.children.count
     let max = 10;
     const btns = document.querySelectorAll(`[data-action='increment']`)
-
+    
     btns.forEach(b => {
         if(total >= max) {
             b.disabled = true
@@ -199,5 +218,17 @@ function actualizarBotones(total) {
             b.disabled = false
         }
     });
+
+    if(huesped.adults.count <= 0) {
+        document.querySelector("[data-type='adults']").disabled = true
+    } else {
+        document.querySelector("[data-type='adults']").disabled = false
+    }
+
+    if(huesped.children.count <= 0) {
+        document.querySelector("[data-type='children']").disabled = true
+    } else {
+        document.querySelector("[data-type='children']").disabled = false
+    }
 }
 
